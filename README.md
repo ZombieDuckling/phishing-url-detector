@@ -32,6 +32,10 @@ It supports export to JSON and CSV.
 ```text
 .
 ├── detector.py
+├── tests/
+│   └── test_detector.py
+├── .github/
+│   └── workflows/ci.yml
 └── README.md
 ```
 
@@ -47,6 +51,13 @@ Batch mode:
 
 ```bash
 python3 detector.py --file urls.txt --json-out results.json --csv-out results.csv
+```
+
+Run the test suite:
+
+```bash
+python3 -m pip install pytest
+python3 -m pytest -q
 ```
 
 ## Sample output
@@ -79,7 +90,7 @@ The current version checks for:
 - Add optional WHOIS/domain age enrichment.
 - Add URL decoding and obfuscation checks.
 - Add a tiny web UI for demo screenshots.
-- Add test cases for known benign and malicious URL patterns.
+- Expand test cases with real-world benign and malicious URL fixtures.
 
 ## Ethics
 
